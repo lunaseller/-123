@@ -6,7 +6,7 @@
     <title>Rechtsvertretung Deutschland | Fachmännische Unterstützung bei Ihren Rechten</title>
     <meta name="description" content="Professionelle Rechtsvertretung für Verbraucher in ganz Deutschland. Schnell, zuverlässig und diskret. Jetzt unverbindlich beraten lassen!">
     
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code (保留之前添加的像素代码) -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -86,8 +86,8 @@
                 <a href="#vorteile" class="text-primary hover:text-secondary font-medium">Vorteile</a>
                 <a href="#kontakt" class="text-primary hover:text-secondary font-medium">Kontakt</a>
             </nav>
-            <!-- 修改1: 移动端电话按钮改为Facebook聊天 -->
-            <a href="https://m.me/你的Facebook页面ID或用户名" target="_blank" rel="noopener noreferrer" class="btn-facebook md:hidden">
+            <!-- 移动端Facebook聊天按钮 -->
+            <a href="https://www.facebook.com/profile.php?id=61578038548195" target="_blank" rel="noopener noreferrer" class="btn-facebook md:hidden">
                 <i class="fa fa-facebook mr-2"></i>Chat
             </a>
         </div>
@@ -104,12 +104,12 @@
                     Ob Kaufrecht, Arbeitsrecht, Mietrecht oder Versicherungsstreit – Wir vertreten Ihre Interessen professionell und erfolgreich.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <!-- 修改2: 申请帮助按钮改为Facebook聊天 -->
-                    <a href="https://m.me/你的Facebook页面ID或用户名" target="_blank" rel="noopener noreferrer" class="btn-facebook text-center">
+                    <!-- 申请帮助按钮 -->
+                    <a href="https://www.facebook.com/profile.php?id=61578038548195" target="_blank" rel="noopener noreferrer" class="btn-facebook text-center">
                         <i class="fa fa-facebook mr-2"></i>Hilfe beantragen
                     </a>
-                    <!-- 修改3: 电话按钮也改为Facebook聊天 (保持样式但功能替换) -->
-                    <a href="https://m.me/你的Facebook页面ID或用户名" target="_blank" rel="noopener noreferrer" class="btn-outline text-center">
+                    <!-- 电话/聊天按钮 -->
+                    <a href="https://www.facebook.com/profile.php?id=61578038548195" target="_blank" rel="noopener noreferrer" class="btn-outline text-center">
                         <i class="fa fa-facebook mr-2"></i>Jetzt chatten
                     </a>
                 </div>
@@ -264,7 +264,7 @@
         </div>
     </section>
 
-    <!-- 替换后的援助板块 (德语口语化翻译) -->
+    <!-- 援助板块 -->
     <section id="kontakt" class="section-padding bg-light">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
@@ -272,15 +272,12 @@
                     Rechtsberatung rund um die Uhr – helfen wir Ihnen, von Betrug gestohlenes Geld zurückzubekommen! 
                     Brauchen Sie unsere Unterstützung? Klicken Sie jetzt auf die Schaltfläche unten und kontaktieren Sie uns über Facebook!
                 </p>
-                <!-- 修改4: 主要联系按钮改为Facebook聊天 -->
-                <a href="https://m.me/你的Facebook页面ID或用户名" target="_blank" rel="noopener noreferrer" class="btn-facebook text-lg px-8 py-4">
+                <!-- 主要联系按钮 -->
+                <a href="https://www.facebook.com/profile.php?id=61578038548195" target="_blank" rel="noopener noreferrer" class="btn-facebook text-lg px-8 py-4">
                     <i class="fa fa-facebook mr-2"></i>Jetzt über Facebook chatten
                 </a>
                 
-                <!-- ====== 新增联系按钮 (集成点击事件) ====== -->
-                <button id="contactButton" class="btn-facebook text-lg px-8 py-4 mt-6">
-                    <i class="fa fa-facebook mr-2"></i>联系
-                </button>
+                <!-- ====== 删除了多余的"联系"按钮 ====== -->
             </div>
         </div>
     </section>
@@ -296,8 +293,8 @@
             <div>
                 <h3 class="text-xl font-bold mb-4">Kontakt</h3>
                 <p class="opacity-70 mb-2"><i class="fa fa-map-marker mr-2"></i> Musterstraße 123, 10178 Berlin</p>
-                <!-- 修改5: 页脚电话改为Facebook链接 -->
-                <a href="https://m.me/你的Facebook页面ID或用户名" target="_blank" rel="noopener noreferrer" class="opacity-70 hover:opacity-100 block mb-2">
+                <!-- Facebook链接 -->
+                <a href="https://www.facebook.com/profile.php?id=61578038548195" target="_blank" rel="noopener noreferrer" class="opacity-70 hover:opacity-100 block mb-2">
                     <i class="fa fa-facebook mr-2"></i> Facebook Messenger
                 </a>
                 <p class="opacity-70"><i class="fa fa-envelope mr-2"></i> info@de-rechtsschutz.de</p>
@@ -327,19 +324,7 @@
             document.getElementById('cookieBanner').classList.add('hidden');
         }
 
-        // ====== 新增联系按钮点击事件 ======
-        document.getElementById('contactButton').addEventListener('click', function() {
-            // 1. 触发Facebook Pixel的Contact事件 (可选，用于统计)
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Contact');
-            }
-            
-            // 2. 跳转到Facebook Messenger聊天
-            window.open('https://m.me/你的Facebook页面ID或用户名', '_blank', 'noopener noreferrer');
-            
-            // 3. 可选：添加自定义事件代码 (可根据需要修改)
-            // insert_event_code_here;
-        }, false);
+        // ====== 删除了contactButton相关的点击事件 ======
     </script>
 </body>
 </html>
