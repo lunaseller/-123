@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechtsvertretung Deutschland | Fachmännische Unterstützung bei Ihren Rechten</title>
+    <meta name="description" content="Professionelle Rechtsvertretung für Verbraucher in ganz Deutschland. Schnell, zuverlässig und diskret. Jetzt unverbindlich beraten lassen!">
+    <!-- 样式库 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 图标库 -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A2343', // 德国商务主色
+                        secondary: '#C60000', // 警示/强调色
+                        facebook: '#1877F2', // Facebook品牌色
+                        light: '#F5F7FA',
+                        dark: '#1A1A1A'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .section-padding {
+                @apply py-16 md:py-24;
+            }
+            .btn-main {
+                @apply bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-all shadow-lg;
+            }
+            .btn-outline {
+                @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all;
+            }
+            .btn-facebook {
+                @apply bg-facebook text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#166FE5] transition-all shadow-lg;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-dark bg-white">
+    <!-- Cookie 提示 (欧盟合规) -->
+    <div id="cookieBanner" class="fixed bottom-0 left-0 w-full bg-primary text-white p-4 z-50 hidden">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm mb-3 md:mb-0">Wir verwenden Cookies, um Ihnen die beste Erfahrung zu bieten. Durch die Nutzung unserer Website stimmen Sie der Datenschutzrichtlinie zu.</p>
+            <div class="flex gap-3">
+                <button onclick="acceptCookies()" class="bg-white text-primary px-4 py-2 rounded text-sm font-semibold">Akzeptieren</button>
+                <button onclick="closeBanner()" class="bg-gray-300 text-primary px-4 py-2 rounded text-sm">Schließen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <header class="sticky top-0 bg-white shadow-md z-40">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-primary font-bold text-xl md:text-2xl">DE-RECHTS <span class="text-secondary">SCHUTZ</span></a>
+            <nav class="hidden md:flex gap-8">
+                <a href="#leistungen" class="text-primary hover:text-secondary font-medium">Leistungen</a>
+                <a href="#ablauf" class="text-primary hover:text-secondary font-medium">Ablauf</a>
+                <a href="#vorteile" class="text-primary hover:text-secondary font-medium">Vorteile</a>
+                <a href="#kontakt" class="text-primary hover:text-secondary font-medium">Kontakt</a>
+            </nav>
+            <!-- 修改1: 移动端电话按钮改为Facebook聊天 -->
+            <a href="https://m.me/你的Facebook页面ID或用户名" target="_blank" rel="noopener noreferrer" class="btn-facebook md:hidden">
+                <i class="fa fa-facebook mr-2"></i>Chat
+            </a>
+        </div>
+    </header>
+
+    <!-- 首屏 Banner -->
+    <section class="bg-primary text-white section-padding relative overflow-hidden">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center relative z-10">
+            <div>
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight mb-6">
+                    Ihre <span class="text-yellow-400">Rechte</span> in Deutschland – <br>Wir kämpfen für Sie!
+                </h1>
+                <p class="text-lg md:text-xl opacity-90 mb-8">
+                    Ob Kaufrecht, Arbeitsrecht, Mietrecht oder Versicherungsstreit – Wir vertreten Ihre Interessen professionell und erfolgreich.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <!-- 修改2: 申请帮助按钮改为Facebook聊天 -->
+                    <a href="https://m.me/你的Facebook页面ID或用户名" target="_blank" rel="noopener noreferrer" class="btn-facebook text-center">
+                        <i class="fa fa-facebook mr-2"></i>Hilfe beantragen
+                    </a>
+                    <!-- 修改3: 电话按钮也改为Facebook聊天 (保持样式但功能替换) -->
+                    <a href="https://m.me/你的Facebook页面ID或用户名" target="_blank" rel="noopener noreferrer" class="btn-outline text-center">
+                        <i class="fa fa-facebook mr-2"></i>Jetzt chatten
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center gap-4">
+                    <i class="fa fa-check-circle text-green-400 text-xl"></i>
+                    <span>Keine Kosten ohne Erfolg</span>
+                </div>
+                <div class="mt-2 flex items-center gap-4">
+                    <i class="fa fa-check-circle text-green-400 text-xl"></i>
+                    <span>Diskrete & schnelle Abwicklung</span>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <img src="https://picsum.photos/id/175/600/400" alt="Rechtsvertretung Deutschland" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+            </div>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://picsum.photos/id/1073/1200/800')] bg-cover bg-center"></div>
+    </section>
+
+    <!-- 服务范围 -->
+    <section id="leistungen" class="bg-light section-padding">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">Unsere Rechtsdienstleistungen</h2>
+            <p class="text-gray-600 max-w-3xl mx-auto mb-12">Wir decken alle wichtigen Bereiche des deutschen Rechts ab – spezialisiert auf Verbraucher- und Durchsetzungsrecht.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 服务卡片1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <div class="text-secondary text-4xl mb-4"><i class="fa fa-shopping-basket"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Kaufrecht & Garantie</h3>
+                    <p class="text-gray-600">Reklamationen, Gewährleistung, Rückerstattungen und Streitigkeiten mit Händlern.</p>
+                </div>
+                <!-- 服务卡片2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <div class="text-secondary text-4xl mb-4"><i class="fa fa-briefcase"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Arbeitsrecht</h3>
+                    <p class="text-gray-600">Kündigungen, Abmahnungen, Urlaubsansprüche und Gehaltsstreitigkeiten.</p>
+                </div>
+                <!-- 服务卡片3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <div class="text-secondary text-4xl mb-4"><i class="fa fa-home"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Mietrecht</h3>
+                    <p class="text-gray-600">Mietsteigerungen, Reparaturen, Kündigungen und Kautionen.</p>
+                </div>
+                <!-- 服务卡片4 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <div class="text-secondary text-4xl mb-4"><i class="fa fa-shield"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Versicherungsrecht</h3>
+                    <p class="text-gray-600">Versicherungen, die nicht zahlen – wir setzen Ihre Ansprüche durch.</p>
+                </div>
+                <!-- 服务卡片5 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <div class="text-secondary text-4xl mb-4"><i class="fa fa-credit-card"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Online-Recht & Widerruf</h3>
+                    <p class="text-gray-600">Widerrufe, Betrug im Internet, fehlerhafte Online-Bestellungen.</p>
+                </div>
+                <!-- 服务卡片6 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <div class="text-secondary text-4xl mb-4"><i class="fa fa-users"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Verbraucherschutz</h3>
+                    <p class="text-gray-600">Allgemeine Verbraucherrechte, Abmahnungen und Schadenersatz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 流程步骤 -->
+    <section id="ablauf" class="section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">So einfach funktioniert es</h2>
+                <p class="text-gray-600">In nur 4 Schritten zu Ihrem Recht – ohne komplizierte Bürokratie.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">1</div>
+                    <h3 class="text-xl font-bold mb-2">Kontakt aufnehmen</h3>
+                    <p class="text-gray-600">Teilen Sie uns Ihren Fall mit – per Facebook Chat, Telefon oder E-Mail.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">2</div>
+                    <h3 class="text-xl font-bold mb-2">Kostenlose Prüfung</h3>
+                    <p class="text-gray-600">Wir prüfen Ihren Fall unverbindlich und sagen Ihnen die Erfolgschancen.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">3</div>
+                    <h3 class="text-xl font-bold mb-2">Rechtsvertretung</h3>
+                    <p class="text-gray-600">Wir übernehmen die gesamte Kommunikation und Vertretung für Sie.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">4</div>
+                    <h3 class="text-xl font-bold mb-2">Erfolg & Ergebnis</h3>
+                    <p class="text-gray-600">Sie erhalten Ihr Geld, Ihre Rechte oder eine zufriedenstellende Lösung.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 优势模块 -->
+    <section id="vorteile" class="bg-primary text-white section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-3">Warum Sie uns wählen sollten</h2>
+                <p class="opacity-80">Professionell, vertrauenswürdig und erfolgreich – Tausende zufriedene Kunden in ganz Deutschland.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="flex gap-4">
+                    <i class="fa fa-check-circle text-green-400 text-3xl mt-1"></i>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Keine Kosten ohne Erfolg</h3>
+                        <p class="opacity-80">Nur zahlen, wenn wir Ihren Fall erfolgreich durchsetzen.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <i class="fa fa-check-circle text-green-400 text-3xl mt-1"></i>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Fachkundige Experten</h3>
+                        <p class="opacity-80">Spezialisierte Juristen mit langjähriger Praxiserfahrung.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <i class="fa fa-check-circle text-green-400 text-3xl mt-1"></i>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Schnelle Abwicklung</h3>
+                        <p class="opacity-80">Keine langen Wartezeiten – wir handeln umgehend für Sie.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <i class="fa fa-check-circle text-green-400 text-3xl mt-1"></i>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">100% Diskretion</h3>
+                        <p class="opacity-80">Ihre Daten und Angelegenheiten bleiben streng vertraulich.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <i class="fa fa-check-circle text-green-400 text-3xl mt-1"></i>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Ganz Deutschland</h3>
+                        <p class="opacity-80">Wir vertreten Sie in allen Bundesländern – bundesweit tätig.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <i class="fa fa-check-circle text-green-400 text-3xl mt-1"></i>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Kostenlose Erstberatung</h3>
+                        <p class="opacity-80">Unverbindliche Prüfung Ihres Falles ohne Kosten für Sie.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 替换后的援助板块 (德语口语化翻译) -->
+    <section id="kontakt" class="section-padding bg-light">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
+                <p class="text-xl md:text-2xl text-gray-800 leading-relaxed mb-8">
+                    Rechtsberatung rund um die Uhr – helfen wir Ihnen, von Betrug gestohlenes Geld zurückzubekommen! 
+                    Brauchen Sie unsere Unterstützung? Klicken Sie jetzt auf die Schaltfläche unten und kontaktieren Sie uns über Facebook!
+                </p>
+                <!-- 修改4: 主要联系按钮改为Facebook聊天 -->
+                <a href="https://m.me/你的Facebook页面ID或用户名" target="_blank" rel="noopener noreferrer" class="btn-facebook text-lg px-8 py-4">
+                    <i class="fa fa-facebook mr-2"></i>Jetzt über Facebook chatten
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-10">
+            <div>
+                <h3 class="text-xl font-bold mb-4">DE-RECHTSSCHUTZ</h3>
+                <p class="opacity-70 mb-4">Professionelle Rechtsvertretung für Verbraucher in ganz Deutschland.</p>
+                <p class="opacity-70">© 2025 Alle Rechte vorbehalten.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Kontakt</h3>
+                <p class="opacity-70 mb-2"><i class="fa fa-map-marker mr-2"></i> Musterstraße 123, 10178 Berlin</p>
+                <!-- 修改5: 页脚电话改为Facebook链接 -->
+                <a href="https://m.me/你的Facebook页面ID或用户名" target="_blank" rel="noopener noreferrer" class="opacity-70 hover:opacity-100 block mb-2">
+                    <i class="fa fa-facebook mr-2"></i> Facebook Messenger
+                </a>
+                <p class="opacity-70"><i class="fa fa-envelope mr-2"></i> info@de-rechtsschutz.de</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Rechtliches</h3>
+                <a href="#" class="block opacity-70 hover:text-white mb-2">Impressum</a>
+                <a href="#" class="block opacity-70 hover:text-white mb-2">Datenschutz</a>
+                <a href="#" class="block opacity-70 hover:text-white">AGB</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        // Cookie 提示
+        window.onload = function() {
+            if(!localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookieBanner').classList.remove('hidden');
+            }
+        }
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookieBanner').classList.add('hidden');
+        }
+        function closeBanner() {
+            document.getElementById('cookieBanner').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
