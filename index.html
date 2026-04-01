@@ -6,7 +6,6 @@
     <title>Rechtsvertretung Deutschland | Fachmännische Unterstützung bei Ihren Rechten</title>
     <meta name="description" content="Professionelle Rechtsvertretung für Verbraucher in ganz Deutschland. Schnell, zuverlässig und diskret. Jetzt unverbindlich beraten lassen!">
     
-    <!-- ====== 添加 Meta Pixel 代码 (放在head标签内，其他脚本之前) ====== -->
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -24,7 +23,6 @@
     src="https://www.facebook.com/tr?id=935549079231141&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-    <!-- ====== Meta Pixel 代码结束 ====== -->
 
     <!-- 样式库 -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -278,6 +276,11 @@
                 <a href="https://m.me/你的Facebook页面ID或用户名" target="_blank" rel="noopener noreferrer" class="btn-facebook text-lg px-8 py-4">
                     <i class="fa fa-facebook mr-2"></i>Jetzt über Facebook chatten
                 </a>
+                
+                <!-- ====== 新增联系按钮 (集成点击事件) ====== -->
+                <button id="contactButton" class="btn-facebook text-lg px-8 py-4 mt-6">
+                    <i class="fa fa-facebook mr-2"></i>联系
+                </button>
             </div>
         </div>
     </section>
@@ -323,6 +326,20 @@
         function closeBanner() {
             document.getElementById('cookieBanner').classList.add('hidden');
         }
+
+        // ====== 新增联系按钮点击事件 ======
+        document.getElementById('contactButton').addEventListener('click', function() {
+            // 1. 触发Facebook Pixel的Contact事件 (可选，用于统计)
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Contact');
+            }
+            
+            // 2. 跳转到Facebook Messenger聊天
+            window.open('https://m.me/你的Facebook页面ID或用户名', '_blank', 'noopener noreferrer');
+            
+            // 3. 可选：添加自定义事件代码 (可根据需要修改)
+            // insert_event_code_here;
+        }, false);
     </script>
 </body>
 </html>
