@@ -24,14 +24,13 @@
     ></noscript>
     <!-- End Meta Pixel Code -->
 
-    <!-- 优化后的样式（增强信任感+吸引力） -->
     <style>
         /* 基础样式重置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         body {
             color: #1A1A1A;
@@ -44,7 +43,6 @@
             margin: 0 auto;
             padding: 0 16px;
         }
-        /* 自定义颜色变量（更贴合金融/安全类视觉） */
         :root {
             --primary: #0A2343;
             --secondary: #C60000;
@@ -57,10 +55,9 @@
             --gray-100: #f3f4f6;
             --gray-600: #4b5563;
             --gray-800: #1f2937;
-            --trust-blue: #1e40af; /* 新增：信任蓝 */
-            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08); /* 柔和阴影增强真实感 */
+            --trust-blue: #1e40af;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
         }
-        /* 通用工具类 */
         .section-padding {
             padding: 4rem 0;
         }
@@ -77,12 +74,12 @@
             font-weight: 600;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
             transition: all 0.3s ease;
         }
         .btn-main:hover {
             background: #b91c1c;
-            transform: translateY(-2px); /* 悬浮上移增强交互感 */
+            transform: translateY(-2px);
         }
         .btn-outline {
             border: 2px solid var(--primary);
@@ -107,7 +104,7 @@
             font-weight: 600;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
             transition: all 0.3s ease;
         }
         .btn-facebook:hover {
@@ -124,7 +121,6 @@
             position: relative;
             overflow: hidden;
         }
-        /* 卡片悬浮效果（增强真实感） */
         .service-card::before {
             content: "";
             position: absolute;
@@ -149,229 +145,87 @@
             background: var(--primary);
             margin: 0 auto 0.5rem;
         }
-        /* 响应式布局 */
         .grid {
             display: grid;
             gap: 2rem;
         }
         @media (min-width: 768px) {
-            .grid-cols-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+            .md\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
         }
         @media (min-width: 1024px) {
-            .grid-cols-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .grid-cols-4 {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        .flex {
-            display: flex;
-        }
-        .flex-col {
-            flex-direction: column;
-        }
-        .items-center {
-            align-items: center;
-        }
-        .justify-between {
-            justify-content: space-between;
-        }
-        .justify-center {
-            justify-content: center;
-        }
-        .gap-4 {
-            gap: 1rem;
-        }
-        .gap-6 {
-            gap: 1.5rem;
-        }
-        .gap-8 {
-            gap: 2rem;
-        }
-        .gap-10 {
-            gap: 2.5rem;
-        }
-        .mt-1 {
-            margin-top: 0.25rem;
-        }
-        .mt-2 {
-            margin-top: 0.5rem;
-        }
-        .mt-4 {
-            margin-top: 1rem;
-        }
-        .mt-6 {
-            margin-top: 1.5rem;
-        }
-        .mt-8 {
-            margin-top: 2rem;
-        }
-        .mb-2 {
-            margin-bottom: 0.5rem;
-        }
-        .mb-3 {
-            margin-bottom: 0.75rem;
-        }
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-        .mb-6 {
-            margin-bottom: 1.5rem;
-        }
-        .mb-8 {
-            margin-bottom: 2rem;
-        }
-        .mb-12 {
-            margin-bottom: 3rem;
-        }
-        .mb-16 {
-            margin-bottom: 4rem;
-        }
-        .text-center {
-            text-align: center;
-        }
-        .text-left {
-            text-align: left;
-        }
-        .text-sm {
-            font-size: 0.875rem;
-        }
-        .text-lg {
-            font-size: 1.125rem;
-        }
-        .text-xl {
-            font-size: 1.25rem;
-        }
-        .text-2xl {
-            font-size: 1.5rem;
-        }
-        .text-3xl {
-            font-size: 1.875rem;
-        }
-        .text-4xl {
-            font-size: 2.25rem;
-            line-height: 1.3; /* 优化大标题行高 */
-        }
-        .font-bold {
-            font-weight: 700;
-        }
-        .font-semibold {
-            font-weight: 600;
-        }
-        .font-medium {
-            font-weight: 500;
-        }
-        .text-white {
-            color: white;
-        }
-        .text-primary {
-            color: var(--primary);
-        }
-        .text-secondary {
-            color: var(--secondary);
-        }
-        .text-gray-600 {
-            color: var(--gray-600);
-        }
-        .text-gray-800 {
-            color: var(--gray-800);
-        }
-        .text-green-400 {
-            color: var(--green-400);
-        }
-        .text-yellow-400 {
-            color: var(--yellow-400);
-        }
-        .opacity-70 {
-            opacity: 0.7;
-        }
-        .opacity-80 {
-            opacity: 0.8;
-        }
-        .opacity-90 {
-            opacity: 0.9;
-        }
-        .rounded {
-            border-radius: 0.25rem;
-        }
-        .rounded-lg {
-            border-radius: 0.5rem;
-        }
-        .rounded-xl {
-            border-radius: 0.75rem;
-        }
-        .rounded-2xl {
-            border-radius: 1rem;
-        }
-        .rounded-full {
-            border-radius: 9999px;
-        }
-        .shadow-lg {
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-        .shadow-xl {
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-        .shadow-2xl {
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-        }
-        .w-16 {
-            width: 4rem;
-        }
-        .w-20 {
-            width: 5rem;
-        }
-        .h-1 {
-            height: 0.25rem;
-        }
-        .h-20 {
-            height: 5rem;
-        }
-        .w-full {
-            width: 100%;
-        }
-        .max-w-3xl {
-            max-width: 48rem;
-        }
-        .max-w-4xl {
-            max-width: 56rem;
-        }
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .py-12 {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-        .px-4 {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-        .px-6 {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
-        .px-8 {
-            padding-left: 2rem;
-            padding-right: 2rem;
-        }
-        .py-3 {
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-        }
-        .py-4 {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-        .py-8 {
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-        }
-        /* 自定义组件样式 */
+            .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+            .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+            .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .gap-4 { gap: 1rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-8 { gap: 2rem; }
+        .gap-10 { gap: 2.5rem; }
+        .mt-1 { margin-top: 0.25rem; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-3 { margin-bottom: 0.75rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-16 { margin-bottom: 4rem; }
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-sm { font-size: 0.875rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; line-height: 1.3; }
+        .md\:text-5xl { font-size: 3rem; line-height: 1.2; }
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+        .font-medium { font-weight: 500; }
+        .text-white { color: white; }
+        .text-primary { color: var(--primary); }
+        .text-secondary { color: var(--secondary); }
+        .text-gray-600 { color: var(--gray-600); }
+        .text-gray-800 { color: var(--gray-800); }
+        .text-green-400 { color: var(--green-400); }
+        .text-yellow-400 { color: var(--yellow-400); }
+        .opacity-70 { opacity: 0.7; }
+        .opacity-80 { opacity: 0.8; }
+        .opacity-90 { opacity: 0.9; }
+        .rounded { border-radius: 0.25rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-full { border-radius: 9999px; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
+        .shadow-xl { box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        .shadow-2xl { box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); }
+        .w-16 { width: 4rem; }
+        .w-20 { width: 5rem; }
+        .h-1 { height: 0.25rem; }
+        .h-20 { height: 5rem; }
+        .w-full { width: 100%; }
+        .max-w-3xl { max-width: 48rem; }
+        .max-w-4xl { max-width: 56rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .px-8 { padding-left: 2rem; padding-right: 2rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+
         #cookieBanner {
             position: fixed;
             bottom: 0;
@@ -395,6 +249,8 @@
             box-shadow: var(--shadow-soft);
             transition: all 0.3s ease;
             margin-bottom: 1.5rem;
+            width: 100%;
+            max-width: 400px;
         }
         #contactButton:hover {
             background: #2563eb;
@@ -407,88 +263,21 @@
             box-shadow: var(--shadow-soft);
             z-index: 40;
         }
-        /* 响应式隐藏/显示 */
-        .md\:hidden {
-            display: inline-block;
+        .md\:hidden { display: none; }
+        @media (max-width: 767px) {
+            .md\:hidden { display: block; }
+            .md\:flex { display: none !important; }
         }
-        .md\:flex {
-            display: none;
-        }
-        @media (min-width: 768px) {
-            .md\:hidden {
-                display: none;
-            }
-            .md\:flex {
-                display: flex;
-            }
-            .md\:grid-cols-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .md\:grid-cols-4 {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            .md\:mb-0 {
-                margin-bottom: 0;
-            }
-            .md\:py-24 {
-                padding-top: 6rem;
-                padding-bottom: 6rem;
-            }
-            .md\:text-2xl {
-                font-size: 1.5rem;
-            }
-            .md\:text-4xl {
-                font-size: 2.25rem;
-            }
-            .md\:p-12 {
-                padding: 3rem;
-            }
-            .md\:flex-row {
-                flex-direction: row;
-            }
-        }
-        @media (min-width: 1024px) {
-            .lg\:grid-cols-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        /* 背景样式 */
-        .bg-primary {
-            background: var(--primary);
-        }
-        .bg-secondary {
-            background: var(--secondary);
-        }
-        .bg-light {
-            background: var(--light);
-        }
-        .bg-dark {
-            background: var(--dark);
-        }
-        .bg-service-bg {
-            background: var(--service-bg);
-        }
-        .bg-white {
-            background: white;
-        }
-        .bg-gray-300 {
-            background: #d1d5db;
-        }
-        /* 链接样式 */
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        a:hover {
-            color: var(--secondary);
-            transition: color 0.3s ease;
-        }
-        /* 图片样式 - 新增图片加载失败兜底样式 */
-        img {
-            max-width: 100%;
-            height: auto;
-            object-cover: cover;
-        }
+        .bg-primary { background: var(--primary); }
+        .bg-secondary { background: var(--secondary); }
+        .bg-light { background: var(--light); }
+        .bg-dark { background: var(--dark); }
+        .bg-service-bg { background: var(--service-bg); }
+        .bg-white { background: white; }
+        .bg-gray-300 { background: #d1d5db; }
+        a { text-decoration: none; color: inherit; }
+        a:hover { color: var(--secondary); transition: color 0.3s ease; }
+        img { max-width: 100%; height: auto; object-fit: cover; }
         .img-placeholder {
             background-color: #e5e7eb;
             display: flex;
@@ -499,28 +288,10 @@
             border-radius: 0.75rem;
             min-height: 300px;
         }
-        /* 自定义图标样式（替代Font Awesome） */
-        .icon-facebook::before {
-            content: "f";
-            font-family: sans-serif;
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-        .icon-check::before {
-            content: "✓";
-            margin-right: 1rem;
-            color: var(--green-400);
-            font-size: 1.25rem;
-        }
-        .icon-map::before {
-            content: "📍";
-            margin-right: 0.5rem;
-        }
-        .icon-envelope::before {
-            content: "✉️";
-            margin-right: 0.5rem;
-        }
-        /* 新增：核心卖点文字样式（增强吸引力） */
+        .icon-facebook::before { content: "f"; font-weight: bold; margin-right: 0.5rem; }
+        .icon-check::before { content: "✓"; margin-right: 1rem; color: var(--green-400); font-size: 1.25rem; }
+        .icon-map::before { content: "📍"; margin-right: 0.5rem; }
+        .icon-envelope::before { content: "✉️"; margin-right: 0.5rem; }
         .hero-highlight {
             position: relative;
             padding: 0.2rem 0;
@@ -536,7 +307,6 @@
             opacity: 0.4;
             border-radius: 2px;
         }
-        /* 新增：信任标签样式 */
         .trust-badge {
             display: inline-flex;
             align-items: center;
@@ -547,6 +317,7 @@
             font-size: 0.875rem;
             margin-top: 1rem;
         }
+        .leading-relaxed { line-height: 1.7; }
     </style>
 </head>
 <body>
@@ -566,23 +337,21 @@
             <nav class="md:flex gap-8">
                 <a href="#ablauf" class="text-primary hover:text-secondary font-medium">Wie’s funktioniert</a>
                 <a href="#vorteile" class="text-primary hover:text-secondary font-medium">Unsere Vorteile</a>
-                <a href="#our-services" class="text-primary hover:text-secondary font-medium">Unsere Dienstleistungen</a>
+                <a href="#our-services" class="text-primary hover:text-secondary font-medium">Dienstleistungen</a>
                 <a href="#kontakt" class="text-primary hover:text-secondary font-medium">Kontakt</a>
             </nav>
-            <a href="https://m.me/61577671605775" target="_blank" rel="noopener noreferrer" class="btn-facebook md:hidden">
+            <a href="https://m.me/oumou.barry.7330" target="_blank" rel="noopener noreferrer" class="btn-facebook md:hidden">
                 <span class="icon-facebook"></span>Chatten
             </a>
         </div>
     </header>
 
-    <!-- 核心修改区域：替换文字+优化排版 -->
     <section class="bg-primary text-white section-padding relative overflow-hidden">
         <div class="container px-4 grid md:grid-cols-2 gap-10 items-center relative z-10">
             <div>
                 <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
                     Deine <span class="text-yellow-400">Gelder</span> zurückholen – <br>Wir kämpfen für dich!
                 </h1>
-                <!-- 替换后的德语文字 + 优化排版 -->
                 <p class="text-lg md:text-xl opacity-90 mb-8 leading-relaxed">
                     <span class="hero-highlight">Wiederherstellung bei Kryptowährungsbetrug,</span><br>
                     Wiederherstellungsdienstleistungen bei Anlagebetrug,<br>
@@ -591,15 +360,14 @@
                     Allgemeine Wiederherstellung bei Online-Betrug,<br>
                     Minderung von Phishing-Konten
                 </p>
-                <!-- 新增信任标签：增强真实感 -->
                 <div class="trust-badge mb-6">
                     <span>✅ Über 20 Jahre Erfahrung</span>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://m.me/61577671605775" target="_blank" rel="noopener noreferrer" class="btn-facebook text-center">
+                    <a href="https://m.me/oumou.barry.7330" target="_blank" rel="noopener noreferrer" class="btn-facebook text-center">
                         <span class="icon-facebook"></span>Hilfe anfragen
                     </a>
-                    <a href="https://m.me/61577671605775" target="_blank" rel="noopener noreferrer" class="btn-outline text-center">
+                    <a href="https://m.me/oumou.barry.7330" target="_blank" rel="noopener noreferrer" class="btn-outline text-center">
                         <span class="icon-facebook"></span>Jetzt chatten
                     </a>
                 </div>
@@ -613,7 +381,6 @@
                 </div>
             </div>
             <div class="md:flex hidden">
-                <!-- 优化：使用稳定的图片链接 + 加载失败兜底 -->
                 <div class="rounded-xl shadow-2xl w-full h-auto overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1617042375876-7d786cc5212f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
                          alt="Geld zurückholen bei Betrug" 
@@ -622,59 +389,57 @@
                 </div>
             </div>
         </div>
-        <!-- 优化：替换背景图为纯色渐变，避免图片加载问题 -->
         <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-gradient-to-r from-blue-900 to-gray-900"></div>
     </section>
 
-    <!-- 我们的服务板块 -->
     <section id="our-services" class="bg-service-bg section-padding">
         <div class="container px-4 text-center">
             <div class="service-title-line"></div>
             <p class="text-primary font-medium mb-2">Unsere Dienstleistungen</p>
             <h2 class="text-4xl font-bold text-gray-800 mb-8">Wir holen dein Geld zurück</h2>
             <p class="text-gray-600 max-w-3xl mx-auto mb-12 text-left">
-                ansässiges Cybersicherheitsunternehmen, das sich auf die Wiederherstellung von durch Betrug verlorenen digitalen Vermögenswerten spezialisiert hat. Mit über 20 Jahren professioneller Erfahrung bieten wir transparente Dienstleistungen ohne Vorauszahlungen – für Kryptowährungsbetrug, Überweisungsbetrug und alle Arten von Online-Betrug.
+                Wir sind ein erfahrenes Cybersicherheitsunternehmen, das sich auf die Wiederherstellung von durch Betrug verlorenen digitalen Vermögenswerten spezialisiert hat. Mit über 20 Jahren Erfahrung bieten wir transparente Dienstleistungen ohne Vorauszahlungen – für Kryptowährungsbetrug, Überweisungsbetrug und alle Arten von Online-Betrug.
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="service-card">
                     <h3 class="text-xl font-bold text-gray-800 mb-4">Wiederherstellung bei Kryptowährungsbetrug</h3>
                     <p class="text-gray-600 mb-6 text-left">
-                        Unsere Cyber-Betrug-Untersucher verfolgen die Spuren von Kryptowährungsbetrug und liefern dir durchführbare Beweise, um deine verlorenen Gelder zurückzugewinnen.
+                        Unsere Experten verfolgen die Spuren von Kryptowährungsbetrug und liefern dir durchführbare Beweise, um deine verlorenen Gelder zurückzugewinnen.
                     </p>
                     <p class="text-primary font-medium cursor-pointer hover:text-secondary">Mehr erfahren</p>
                 </div>
                 <div class="service-card">
                     <h3 class="text-xl font-bold text-gray-800 mb-4">Wiederherstellung bei Anlagebetrug</h3>
                     <p class="text-gray-600 mb-6 text-left">
-                        Wir kombinieren Cyber-Intelligenz, Untersuchungen und vor Ort Überwachung, um umfassende und erfolgreiche Lösungen zu gewährleisten.
+                        Wir kombinieren Cyber-Intelligenz, Untersuchungen und Überwachung, um umfassende und erfolgreiche Lösungen zu gewährleisten.
                     </p>
                     <p class="text-primary font-medium cursor-pointer hover:text-secondary">Mehr erfahren</p>
                 </div>
                 <div class="service-card">
                     <h3 class="text-xl font-bold text-gray-800 mb-4">Wiederherstellung bei Bankbetrug</h3>
                     <p class="text-gray-600 mb-6 text-left">
-                        Hilfe, wenn du sie am dringendsten brauchst. Betrug kann jederzeit passieren – unser Expertenteam steht dir rund um die Uhr zur Verfügung.
+                        Hilfe, wenn du sie am dringendsten brauchst. Unser Expertenteam steht dir rund um die Uhr zur Verfügung.
                     </p>
                     <p class="text-primary font-medium cursor-pointer hover:text-secondary">Mehr erfahren</p>
                 </div>
                 <div class="service-card">
                     <h3 class="text-xl font-bold text-gray-800 mb-4">Wiederherstellung bei gestohlenen Konten</h3>
                     <p class="text-gray-600 mb-6 text-left">
-                        Wir helfen dir, verlorene Konten wiederherzustellen oder schädlichen Inhalt zu entfernen. Unsere Online-Experten reparieren alle Schwachstellen deines Kontos.
+                        Wir helfen dir, verlorene Konten wiederherzustellen und Schwachstellen zu reparieren.
                     </p>
                     <p class="text-primary font-medium cursor-pointer hover:text-secondary">Mehr erfahren</p>
                 </div>
                 <div class="service-card">
                     <h3 class="text-xl font-bold text-gray-800 mb-4">Allgemeine Wiederherstellung bei Online-Betrug</h3>
                     <p class="text-gray-600 mb-6 text-left">
-                        Unsere grenzüberschreitenden Betrugswiederherstellungsdienste helfen dir, deine durch Betrug verlorenen Investitionen zurückzugewinnen.
+                        Unsere grenzüberschreitenden Dienste helfen dir, deine durch Betrug verlorenen Investitionen zurückzugewinnen.
                     </p>
                     <p class="text-primary font-medium cursor-pointer hover:text-secondary">Mehr erfahren</p>
                 </div>
                 <div class="service-card">
                     <h3 class="text-xl font-bold text-gray-800 mb-4">Minderung von Phishing-Konten</h3>
                     <p class="text-gray-600 mb-6 text-left">
-                        Reduziere das Risiko von Finanzbetrug durch proaktive Abwehr von Phishing-Angriffen, Passwortdiebstahl und unbefugtem Zugriff.
+                        Reduziere das Risiko von Finanzbetrug durch proaktive Abwehr von Phishing-Angriffen.
                     </p>
                     <p class="text-primary font-medium cursor-pointer hover:text-secondary">Mehr erfahren</p>
                 </div>
@@ -692,22 +457,22 @@
                 <div class="text-center">
                     <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">1</div>
                     <h3 class="text-xl font-bold mb-2">Kontakt aufnehmen</h3>
-                    <p class="text-gray-600">Erzähl uns von deinem Fall – per Facebook-Chat, Telefon oder E-Mail. Mach dir keine Sorgen, es ist einfach!</p>
+                    <p class="text-gray-600">Erzähl uns von deinem Fall – per Facebook-Chat, Telefon oder E-Mail.</p>
                 </div>
                 <div class="text-center">
                     <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">2</div>
                     <h3 class="text-xl font-bold mb-2">Kostenlose Prüfung</h3>
-                    <p class="text-gray-600">Wir prüfen deinen Fall unverbindlich und sagen dir, welche Erfolgschancen du hast – ohne Kosten für dich.</p>
+                    <p class="text-gray-600">Wir prüfen deinen Fall unverbindlich und sagen dir deine Erfolgschancen.</p>
                 </div>
                 <div class="text-center">
                     <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">3</div>
                     <h3 class="text-xl font-bold mb-2">Professionelle Vertretung</h3>
-                    <p class="text-gray-600">Wir übernehmen die ganze Kommunikation und Vertretung – du musst nichts weiter tun.</p>
+                    <p class="text-gray-600">Wir übernehmen die ganze Kommunikation – du musst nichts weiter tun.</p>
                 </div>
                 <div class="text-center">
                     <div class="w-20 h-20 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold">4</div>
                     <h3 class="text-xl font-bold mb-2">Erfolg & Geld zurück</h3>
-                    <p class="text-gray-600">Du erhältst dein Geld zurück oder eine Lösung, mit der du zufrieden bist – garantiert!</p>
+                    <p class="text-gray-600">Du erhältst dein Geld zurück – garantiert!</p>
                 </div>
             </div>
         </div>
@@ -717,49 +482,49 @@
         <div class="container px-4">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-3">Warum du uns wählen solltest</h2>
-                <p class="opacity-80">Professionell, vertrauenswürdig und erfolgreich – Tausende zufriedene Kunden in ganz Deutschland.</p>
+                <p class="opacity-80">Professionell, vertrauenswürdig und erfolgreich – Tausende zufriedene Kunden.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <div class="flex gap-4">
                     <span class="icon-check"></span>
                     <div>
                         <h3 class="text-xl font-bold mb-2">Keine Kosten ohne Erfolg</h3>
-                        <p class="opacity-80">Du zahlst nur, wenn wir deinen Fall erfolgreich durchsetzen – sonst nichts!</p>
+                        <p class="opacity-80">Du zahlst nur, wenn wir deinen Fall erfolgreich durchsetzen.</p>
                     </div>
                 </div>
                 <div class="flex gap-4">
                     <span class="icon-check"></span>
                     <div>
                         <h3 class="text-xl font-bold mb-2">20+ Jahre Erfahrung</h3>
-                        <p class="opacity-80">Unsere Experten kennen jeden Trick von Betrügern – wir wissen, worauf es ankommt.</p>
+                        <p class="opacity-80">Unsere Experten kennen jeden Trick von Betrügern.</p>
                     </div>
                 </div>
                 <div class="flex gap-4">
                     <span class="icon-check"></span>
                     <div>
                         <h3 class="text-xl font-bold mb-2">Schnelle Abwicklung</h3>
-                        <p class="opacity-80">Keine langen Wartezeiten – wir handeln sofort für dich.</p>
+                        <p class="opacity-80">Keine langen Wartezeiten – wir handeln sofort.</p>
                     </div>
                 </div>
                 <div class="flex gap-4">
                     <span class="icon-check"></span>
                     <div>
                         <h3 class="text-xl font-bold mb-2">100% Diskretion</h3>
-                        <p class="opacity-80">Deine Daten und Angelegenheiten bleiben streng vertraulich – das versprechen wir dir.</p>
+                        <p class="opacity-80">Deine Daten und Angelegenheiten bleiben streng vertraulich.</p>
                     </div>
                 </div>
                 <div class="flex gap-4">
                     <span class="icon-check"></span>
                     <div>
                         <h3 class="text-xl font-bold mb-2">Ganz Deutschland</h3>
-                        <p class="opacity-80">Wir vertreten dich in allen Bundesländern – egal, wo du wohnst.</p>
+                        <p class="opacity-80">Wir vertreten dich in allen Bundesländern.</p>
                     </div>
                 </div>
                 <div class="flex gap-4">
                     <span class="icon-check"></span>
                     <div>
                         <h3 class="text-xl font-bold mb-2">Kostenlose Erstberatung</h3>
-                        <p class="opacity-80">Wir prüfen deinen Fall unverbindlich – ohne Kosten und ohne Verpflichtung.</p>
+                        <p class="opacity-80">Wir prüfen deinen Fall unverbindlich – ohne Kosten.</p>
                     </div>
                 </div>
             </div>
@@ -771,10 +536,10 @@
             <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
                 <p class="text-xl md:text-2xl text-gray-800 leading-relaxed mb-8">
                     Hilfe rund um die Uhr – wir helfen dir, von Betrug gestohlenes Geld zurückzubekommen! 
-                    Brauchst du unsere Hilfe? Klick einfach auf die Schaltfläche unten und schreib uns direkt per Facebook!
+                    Brauchst du unsere Hilfe? Schreib uns direkt per Facebook!
                 </p>
                 <button id="contactButton">Jetzt Kontakt aufnehmen</button>
-                <a href="https://m.me/61577671605775" target="_blank" rel="noopener noreferrer" class="btn-facebook text-lg px-8 py-4">
+                <a href="https://m.me/oumou.barry.7330" target="_blank" rel="noopener noreferrer" class="btn-facebook text-lg px-8 py-4">
                     <span class="icon-facebook"></span>Jetzt per Facebook chatten
                 </a>
             </div>
@@ -785,13 +550,13 @@
         <div class="container px-4 grid md:grid-cols-3 gap-10">
             <div>
                 <h3 class="text-xl font-bold mb-4">DE-RECHTSSCHUTZ</h3>
-                <p class="opacity-70 mb-4">Professionelle Unterstützung bei der Wiederherstellung von durch Betrug verlorenen Geldern – wir kümmern uns um dich.</p>
+                <p class="opacity-70 mb-4">Professionelle Unterstützung bei der Wiederherstellung von durch Betrug verlorenen Geldern.</p>
                 <p class="opacity-70">© 2025 Alle Rechte vorbehalten.</p>
             </div>
             <div>
                 <h3 class="text-xl font-bold mb-4">Kontakt</h3>
                 <p class="opacity-70 mb-2"><span class="icon-map"></span> Musterstraße 123, 10178 Berlin</p>
-                <a href="https://m.me/61577671605775" target="_blank" rel="noopener noreferrer" class="opacity-70 hover:opacity-100 block mb-2">
+                <a href="https://m.me/oumou.barry.7330" target="_blank" rel="noopener noreferrer" class="opacity-70 hover:opacity-100 block mb-2">
                     <span class="icon-facebook"></span> Facebook Messenger
                 </a>
                 <p class="opacity-70"><span class="icon-envelope"></span> info@de-rechtsschutz.de</p>
@@ -806,13 +571,11 @@
     </footer>
 
     <script>
-        // 联系按钮点击事件
         document.getElementById('contactButton').addEventListener('click', function() {
-            window.open('https://m.me/61577671605775', '_blank');
+            window.open('https://m.me/oumou.barry.7330', '_blank');
             fbq('track', 'Contact');
-        }, false);
+        });
         
-        // Cookie提示框
         window.onload = function(){
             if(!localStorage.getItem('cookiesAccepted')){
                 document.getElementById('cookieBanner').style.display = 'block';
