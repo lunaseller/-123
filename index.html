@@ -571,23 +571,54 @@
     </footer>
 
     <script>
-        // 核心修复：正确的Messenger自动填充消息写法
+        // 优化版：适配移动端+电脑端的Messenger跳转逻辑
         function openMessengerWithText() {
-            // 替换成你的Messenger用户名/ID（原来的oumou.barry.7330）
+            // 替换成你的Messenger用户名/ID
             const messengerId = "oumou.barry.7330";
-            // 要自动填充的消息
-            const messageText = encodeURIComponent("Hallo, ich möchte Rechtsbeistand anfragen.");
+            // 预设消息
+            const messageText = "Hallo, ich möchte Rechtsbeistand anfragen.";
+            // 编码后的消息（用于移动端）
+            const encodedText = encodeURIComponent(messageText);
             
-            // ✅ 正确的参数格式：用 &messaging_source=source&message_text= 来填充
-            const messengerUrl = `https://m.me/${messengerId}?messaging_source=source_url&message_text=${messageText}`;
+            // 检测是否为移动端设备
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             
-            // 打开新窗口
-            window.open(messengerUrl, '_blank');
-            fbq('track', 'Contact');
+            if (isMobile) {
+                // 移动端：使用自动填充参数
+                const messengerUrl = `https://m.me/${messengerId}?messaging_source=source_url&message_text=${encodedText}`;
+                window.open(messengerUrl, '_blank');
+            } else {
+                // 电脑端：弹出提示框（带复制功能）
+                const confirmText = `Auf Desktop-Geräten kann die Nachricht nicht automatisch eingefügt werden.
+Kopiere diese Nachricht und füge sie in den Messenger-Chat ein:
+
+${messageText}
+
+Klicken Sie auf "OK", um Messenger zu öffnen.`;
+                
+                if (confirm(confirmText)) {
+                    // 复制消息到剪贴板
+                    navigator.clipboard.writeText(messageText).catch(err => {
+                        console.log('Kopieren fehlgeschlagen:', err);
+                    });
+                    // 打开电脑端Messenger（无自动填充）
+                    window.open(`https://m.me/${messengerId}`, '_blank');
+                }
+            }
+            
+            // 追踪Facebook事件（增加容错）
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Contact');
+            }
         }
 
-        // 绑定按钮点击事件
-        document.getElementById('contactButton').addEventListener('click', openMessengerWithText);
+        // 绑定按钮点击事件（确保DOM加载完成）
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactBtn = document.getElementById('contactButton');
+            if (contactBtn) {
+                contactBtn.addEventListener('click', openMessengerWithText);
+            }
+        });
         
         // Cookie横幅逻辑
         window.onload = function(){
