@@ -53,7 +53,7 @@
             --green-400: #4ade80;
             --yellow-400: #facc15;
             --gray-100: #f3f4f6;
-            --gray-600: #4b5563;
+            --gray-600: #4b5560;
             --gray-800: #1f2937;
             --trust-blue: #1e40af;
             --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
@@ -186,7 +186,7 @@
         .text-lg { font-size: 1.125rem; }
         .text-xl { font-size: 1.25rem; }
         .text-2xl { font-size: 1.5rem; }
-        .text-3xl { font-size: 1.875rem; }
+        .text-3xl { font-size: 1.875rem }
         .text-4xl { font-size: 2.25rem; line-height: 1.3; }
         .md\:text-5xl { font-size: 3rem; line-height: 1.2; }
         .font-bold { font-weight: 700; }
@@ -340,7 +340,7 @@
                 <a href="#our-services" class="text-primary hover:text-secondary font-medium">Dienstleistungen</a>
                 <a href="#kontakt" class="text-primary hover:text-secondary font-medium">Kontakt</a>
             </nav>
-            <a onclick="openChat()" class="btn-facebook md:hidden">
+            <a onclick="openMessengerWithText()" class="btn-facebook md:hidden">
                 <span class="icon-facebook"></span>Chatten
             </a>
         </div>
@@ -364,10 +364,10 @@
                     <span>✅ Über 20 Jahre Erfahrung</span>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a onclick="openChat()" class="btn-facebook text-center">
+                    <a onclick="openMessengerWithText()" class="btn-facebook text-center">
                         <span class="icon-facebook"></span>Hilfe anfragen
                     </a>
-                    <a onclick="openChat()" class="btn-outline text-center">
+                    <a onclick="openMessengerWithText()" class="btn-outline text-center">
                         <span class="icon-facebook"></span>Jetzt chatten
                     </a>
                 </div>
@@ -382,7 +382,7 @@
             </div>
             <div class="md:flex hidden">
                 <div class="rounded-xl shadow-2xl w-full h-auto overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1617042375876-7d786cc5212f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                    <img src="https://images.unsplash.com/photo-1617042375876-7d786cc5212f?ixlib=4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
                          alt="Geld zurückholen bei Betrug" 
                          class="w-full h-auto"
                          onerror="this.parentElement.innerHTML='<div class=img-placeholder>✅ Geld zurückholen</div>'">
@@ -539,7 +539,7 @@
                     Brauchst du unsere Hilfe? Schreib uns direkt per Facebook!
                 </p>
                 <button id="contactButton">Jetzt Kontakt aufnehmen</button>
-                <a onclick="openChat()" class="btn-facebook text-lg px-8 py-4">
+                <a onclick="openMessengerWithText()" class="btn-facebook text-lg px-8 py-4">
                     <span class="icon-facebook"></span>Jetzt per Facebook chatten
                 </a>
             </div>
@@ -556,7 +556,7 @@
             <div>
                 <h3 class="text-xl font-bold mb-4">Kontakt</h3>
                 <p class="opacity-70 mb-2"><span class="icon-map"></span> Musterstraße 123, 10178 Berlin</p>
-                <a onclick="openChat()" class="opacity-70 hover:opacity-100 block mb-2">
+                <a onclick="openMessengerWithText()" class="opacity-70 hover:opacity-100 block mb-2">
                     <span class="icon-facebook"></span> Facebook Messenger
                 </a>
                 <p class="opacity-70"><span class="icon-envelope"></span> info@de-rechtsschutz.de</p>
@@ -571,18 +571,25 @@
     </footer>
 
     <script>
-        // 核心：自动打开聊天 + 自动填充消息
-        function openChat() {
-            const user = "oumou.barry.7330";
-            const msg = encodeURIComponent("Hallo, ich möchte Rechtsbeistand anfragen.");
-            const link = `https://www.facebook.com/messages/t/${user}?text=${msg}`;
-            window.open(link, "_blank");
+        // 核心修复：正确的Messenger自动填充消息写法
+        function openMessengerWithText() {
+            // 替换成你的Messenger用户名/ID（原来的oumou.barry.7330）
+            const messengerId = "oumou.barry.7330";
+            // 要自动填充的消息
+            const messageText = encodeURIComponent("Hallo, ich möchte Rechtsbeistand anfragen.");
+            
+            // ✅ 正确的参数格式：用 &messaging_source=source&message_text= 来填充
+            const messengerUrl = `https://m.me/${messengerId}?messaging_source=source_url&message_text=${messageText}`;
+            
+            // 打开新窗口
+            window.open(messengerUrl, '_blank');
             fbq('track', 'Contact');
         }
 
-        // 绑定所有按钮
-        document.getElementById('contactButton').addEventListener('click', openChat);
-
+        // 绑定按钮点击事件
+        document.getElementById('contactButton').addEventListener('click', openMessengerWithText);
+        
+        // Cookie横幅逻辑
         window.onload = function(){
             if(!localStorage.getItem('cookiesAccepted')){
                 document.getElementById('cookieBanner').style.display = 'block';
