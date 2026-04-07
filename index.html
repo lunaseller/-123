@@ -16,11 +16,11 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1220426233504878');
+    fbq('init', '1866607314045735');
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1220426233504878&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=1866607314045735&ev=PageView&noscript=1"
     ></noscript>
     <!-- End Meta Pixel Code -->
 
@@ -279,7 +279,7 @@
         a:hover { color: var(--secondary); transition: color 0.3s ease; }
         img { max-width: 100%; height: auto; object-fit: cover; }
         .img-placeholder {
-            background-color: #e5e5e5;
+            background-color: #e5e7eb;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -538,9 +538,7 @@
                     Hilfe rund um die Uhr – wir helfen dir, von Betrug gestohlenes Geld zurückzubekommen! 
                     Brauchst du unsere Hilfe? Schreib uns direkt per Facebook!
                 </p>
-                
-                <button id="contactButton">联系</button>
-                
+                <button id="contactButton">Jetzt Kontakt aufnehmen</button>
                 <a href="https://m.me/oumou.barry.7330" target="_blank" rel="noopener noreferrer" class="btn-facebook text-lg px-8 py-4">
                     <span class="icon-facebook"></span>Jetzt per Facebook chatten
                 </a>
@@ -572,14 +570,12 @@
         </div>
     </footer>
 
-    <script type="text/javascript">
-    document.getElementById('contactButton').addEventListener('click', function() {
-        window.open('https://m.me/oumou.barry.7330', '_blank');
-        insert_event_code_here;
-    }, false);
-    </script>
-
     <script>
+        document.getElementById('contactButton').addEventListener('click', function() {
+            window.open('https://m.me/oumou.barry.7330', '_blank');
+            fbq('track', 'Contact');
+        });
+        
         window.onload = function(){
             if(!localStorage.getItem('cookiesAccepted')){
                 document.getElementById('cookieBanner').style.display = 'block';
