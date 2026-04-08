@@ -16,11 +16,11 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1866607314045735');
+    fbq('init', '1866607314045775');
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1866607314045735&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=1866607314045775&ev=PageView&noscript=1"
     ></noscript>
     <!-- End Meta Pixel Code -->
 
@@ -279,7 +279,7 @@
         a:hover { color: var(--secondary); transition: color 0.3s ease; }
         img { max-width: 100%; height: auto; object-fit: cover; }
         .img-placeholder {
-            background-color: #e5e7eb;
+            background-color: #e5e5e5;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -340,7 +340,7 @@
                 <a href="#our-services" class="text-primary hover:text-secondary font-medium">Dienstleistungen</a>
                 <a href="#kontakt" class="text-primary hover:text-secondary font-medium">Kontakt</a>
             </nav>
-            <a onclick="openMessengerWithText()" class="btn-facebook md:hidden">
+            <a onclick="openMessengerChat()" class="btn-facebook md:hidden">
                 <span class="icon-facebook"></span>Chatten
             </a>
         </div>
@@ -364,10 +364,10 @@
                     <span>✅ Über 20 Jahre Erfahrung</span>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a onclick="openMessengerWithText()" class="btn-facebook text-center">
+                    <a onclick="openMessengerChat()" class="btn-facebook text-center">
                         <span class="icon-facebook"></span>Hilfe anfragen
                     </a>
-                    <a onclick="openMessengerWithText()" class="btn-outline text-center">
+                    <a onclick="openMessengerChat()" class="btn-outline text-center">
                         <span class="icon-facebook"></span>Jetzt chatten
                     </a>
                 </div>
@@ -539,7 +539,7 @@
                     Brauchst du unsere Hilfe? Schreib uns direkt per Facebook!
                 </p>
                 <button id="contactButton">Jetzt Kontakt aufnehmen</button>
-                <a onclick="openMessengerWithText()" class="btn-facebook text-lg px-8 py-4">
+                <a onclick="openMessengerChat()" class="btn-facebook text-lg px-8 py-4">
                     <span class="icon-facebook"></span>Jetzt per Facebook chatten
                 </a>
             </div>
@@ -556,7 +556,7 @@
             <div>
                 <h3 class="text-xl font-bold mb-4">Kontakt</h3>
                 <p class="opacity-70 mb-2"><span class="icon-map"></span> Musterstraße 123, 10178 Berlin</p>
-                <a onclick="openMessengerWithText()" class="opacity-70 hover:opacity-100 block mb-2">
+                <a onclick="openMessengerChat()" class="opacity-70 hover:opacity-100 block mb-2">
                     <span class="icon-facebook"></span> Facebook Messenger
                 </a>
                 <p class="opacity-70"><span class="icon-envelope"></span> info@de-rechtsschutz.de</p>
@@ -571,15 +571,15 @@
     </footer>
 
     <script>
-        // 自动跳转到你的Facebook主页 Messenger 聊天窗口
-        function openMessengerWithText() {
-            // 你的Facebook主页链接（已替换）
-            const facebookPageUrl = "https://www.facebook.com/profile.php?id=61577671605775";
+        // ✅ 核心修复：一键直接打开 Messenger 聊天窗口
+        function openMessengerChat() {
+            // 官方 Messenger 聊天链接（直接跳对话，不跳主页）
+            const MESSENGER_LINK = "https://m.me/61577671605775";
             
-            // 自动打开聊天页面（电脑/手机通用）
-            window.open(facebookPageUrl, '_blank');
+            // 新标签打开聊天窗口
+            window.open(MESSENGER_LINK, '_blank');
             
-            // 追踪转化
+            // Facebook 转化追踪
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Contact');
             }
@@ -587,13 +587,11 @@
 
         // 绑定所有按钮
         document.addEventListener('DOMContentLoaded', function() {
-            const contactBtn = document.getElementById('contactButton');
-            if (contactBtn) {
-                contactBtn.addEventListener('click', openMessengerWithText);
-            }
+            const btn = document.getElementById('contactButton');
+            if (btn) btn.addEventListener('click', openMessengerChat);
         });
         
-        // Cookie 横幅
+        // Cookie 逻辑
         window.onload = function(){
             if(!localStorage.getItem('cookiesAccepted')){
                 document.getElementById('cookieBanner').style.display = 'block';
